@@ -125,6 +125,5 @@ object Integers {
     /**
      * Returns bool if input is an odd number
      */
-    def IsOdd(input:Int):Boolean =
-        ReturnRest(input, 2) == 1
+    def IsOdd(input:Int):Boolean = !IsEven(input)
 }

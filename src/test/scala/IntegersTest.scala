@@ -66,6 +66,9 @@ class IntegersTest extends FunSuite {
     assert(!IsEven(1))
     assert(IsEven(2))
     assert(!IsEven(3))
+
+    assert(IsEven(-2))
+    assert(!IsEven(-3))
   }
 
   test("IsOdd"){
@@ -73,5 +76,8 @@ class IntegersTest extends FunSuite {
     assert(IsOdd(1))
     assert(!IsOdd(2))
     assert(IsOdd(3))
+
+    assert(!IsOdd(-2))
+    assert(IsOdd(-3))
   }
 }
