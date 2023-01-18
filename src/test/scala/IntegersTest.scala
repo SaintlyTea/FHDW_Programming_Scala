@@ -60,4 +60,18 @@ class IntegersTest extends FunSuite {
     assert(Inverse(1, 3) == 1)
     assert(Inverse(1, 3) == 1)
   }
+
+  test("IsEven"){
+    assert(IsEven(0))
+    assert(!IsEven(1))
+    assert(IsEven(2))
+    assert(!IsEven(3))
+  }
+
+  test("IsOdd"){
+    assert(!IsOdd(0))
+    assert(IsOdd(1))
+    assert(!IsOdd(2))
+    assert(IsOdd(3))
+  }
 }

@@ -115,4 +115,16 @@ object Integers {
         }
         result
     }
+
+    /**
+     * Returns bool for if input is an even number
+     */
+    def IsEven(input:Int):Boolean =
+        ReturnRest(input, 2) == 0
+
+    /**
+     * Returns bool if input is an off number
+     */
+    def IsOdd(input:Int):Boolean =
+        ReturnRest(input, 2) == 1
 }
