@@ -123,7 +123,7 @@ object Integers {
         ReturnRest(input, 2) == 0
 
     /**
-     * Returns bool if input is an off number
+     * Returns bool if input is an odd number
      */
     def IsOdd(input:Int):Boolean =
         ReturnRest(input, 2) == 1
