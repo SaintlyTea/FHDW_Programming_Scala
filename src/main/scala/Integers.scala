@@ -26,7 +26,7 @@ object Integers {
         x*x
 
     /**
-     * x plus y
+     * Returns the bigger number
      */
     def Max(x:Int, y:Int):Int = {
         if (x > y)
@@ -74,7 +74,7 @@ object Integers {
             result = 1
         else if (num != 0) {
             result = num
-            for (i <- 1 until exponent)
+            for (_ <- 1 until exponent)
                 result *= num
         }
         result
@@ -117,13 +117,14 @@ object Integers {
     }
 
     /**
-     * Returns bool for if input is an even number
+     * Returns true if input is an even number
      */
     def IsEven(input:Int):Boolean =
         ReturnRest(input, 2) == 0
 
     /**
-     * Returns bool if input is an odd number
+     * Returns true if input is an odd number
      */
-    def IsOdd(input:Int):Boolean = !IsEven(input)
+    def IsOdd(input:Int):Boolean =
+        !IsEven(input)
 }
