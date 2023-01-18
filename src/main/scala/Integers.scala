@@ -80,6 +80,9 @@ object Integers {
         result
     }
 
+    /**
+     * Divide the number into digits and add each square value together
+     */
     def SumOfEachSquaredDigitInNumber(n:Int):Int = {
         var result = 0
 
@@ -91,10 +94,14 @@ object Integers {
          result
     }
 
+    /**
+     * If x*i divided by m returns 1 from ReturnRest return i
+     * REQUIRES: m>x
+     */
     def Inverse(x:Int, m:Int):Int = {
         var result = 0
 
-        if (x > m)
+        if (m<=x)
             return 0
 
         var i = 1
