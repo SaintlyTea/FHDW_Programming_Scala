@@ -5,6 +5,18 @@ class IntegersTest extends FunSuite {
       assert(Increment(9) == 10)
     }
 
+  test("Square"){
+    assert(Square(2) == 4)
+    assert(Square(3) == 9)
+    assert(Square(5) == 25)
+  }
+
+  test("Max"){
+    assert(Max(2, 5) == 5)
+    assert(Max(6, 5) == 6)
+    assert(Max(1, 1) == 1)
+  }
+
   test("Abs"){
     assert(Abs(-10) == 10)
     assert(Abs(10) == 10)

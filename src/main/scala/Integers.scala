@@ -1,4 +1,4 @@
-import scala.util.control.Exception
+
 // test haha
 object Integers {
     val constant = 42
