@@ -23,16 +23,16 @@ class Q1_H1_Test extends FunSuite {
   }
 
     test("ReturnRest"){
-      assert(ReturnRest(13, 3) == 1)
-      assert(ReturnRest(25, 7) == 4)
-      assert(ReturnRest(0, 1) == 0)
-      assert(ReturnRest(1, 1) == 0)
-      assert(ReturnRest(1, 2) == 1)
-      assert(ReturnRest(1, 0) == 0)
+      assert(Modulo(13, 3) == 1)
+      assert(Modulo(25, 7) == 4)
+      assert(Modulo(0, 1) == 0)
+      assert(Modulo(1, 1) == 0)
+      assert(Modulo(1, 2) == 1)
+      assert(Modulo(1, 0) == 0)
 
-      assert(ReturnRest(1, -2) == 1)
-      assert(ReturnRest(-1, 2) == -1)
-      assert(ReturnRest(-1, -2) == -1)
+      assert(Modulo(1, -2) == 1)
+      assert(Modulo(-1, 2) == -1)
+      assert(Modulo(-1, -2) == -1)
     }
 
   test("SumUpTo"){

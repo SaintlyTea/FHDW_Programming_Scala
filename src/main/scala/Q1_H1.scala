@@ -46,7 +46,7 @@ object Q1_H1 {
   /**
    * Rest of Division for x divided by y
    */
-  def ReturnRest(x: Int, y: Int): Int = {
+  def Modulo(x: Int, y: Int): Int = {
     if (y != 0)
       return x - ((x / y) * y)
 
@@ -90,7 +90,7 @@ object Q1_H1 {
     var result = 0
     var number = n
     while (number > 10) {
-      result += Square(ReturnRest(number, 10))
+      result += Square(Modulo(number, 10))
       number /= 10
     }
     0
@@ -109,7 +109,7 @@ object Q1_H1 {
 
     var i = 1
     while (!(result == i)) {
-      if (ReturnRest(x * i, m) == 1)
+      if (Modulo(x * i, m) == 1)
         result = i
       else
         i += 1
@@ -123,7 +123,7 @@ object Q1_H1 {
    * Returns true if input is an even number
    */
   def IsEven(input: Int): Boolean =
-    ReturnRest(input, 2) == 0
+    Modulo(input, 2) == 0
 
   /**
    * Returns true if input is an odd number
