@@ -1,10 +1,9 @@
-import scala.annotation.tailrec
-
 object Q1_H2 {
 
   /**
    * add each number until n
-   * @param n:Int
+   *
+   * @param n :Int
    * @return
    */
   def SumUpToRECURSION(n: Int): Int = {
@@ -32,7 +31,7 @@ object Q1_H2 {
   }
 
   /**
-   * num times itself as often as exponent says
+   * This is the POWEEEERRROFRECURSION/Power Function, num multiplies itself as often as exponent says
    *
    * @param num      :Int
    * @param exponent :Int
@@ -46,14 +45,50 @@ object Q1_H2 {
   }
 
   /**
+   * with the index get the fibonacci number at the index
    *
-   * @param n:Int
-   * @return
+   * @param n :Int
+   * @return returns number of fibonacci index
    */
-  def fib(n: BigInt): BigInt = {
+  def Fib(n: Int): Int = {
+    if (n < 0) {
+      throw new Exception("Number can't be less than 0")
+    }
     if (n == 0)
-      0
-    else
-      n + fib(n - 1)
+      return 0
+    if (n == 1)
+      return 1
+
+    Fib(n - 2) + Fib(n - 1)
+  }
+
+  /**
+   * This is the IsOptimusPrime/IsPrime function, it will determine whether the number is a prime-number or not
+   *
+   * @param truck :Int
+   * @return if truck is OptimusPrime: true
+   */
+  def IsOptimusPrime(truck: Int): Boolean = {
+    false
+  }
+
+  /**
+   * This is the NumberOfOptimusPrimes/NumberOfPrimes function, it will count how many prime-numbers there are until truckCount
+   *
+   * @param truckCount :int
+   * @return How many OptimusPrimes there are in the truckCount
+   */
+  def NumberOfOptimusPrimes(truckCount: Int): Int = {
+    0
+  }
+
+  /**
+   * This is the UnoReverse/Mirror function, it will spin the number 180 degrees
+   *
+   * @param num :Int
+   * @return number but read from right to left
+   */
+  def UnoReverse(num: Int): Int = {
+    0
   }
 }

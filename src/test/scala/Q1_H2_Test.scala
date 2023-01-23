@@ -30,4 +30,12 @@ class Q1_H2_Test extends FunSuite {
     assert(POWEEEERRROFRECURSION(-2, 3) == -8)
     assert(POWEEEERRROFRECURSION(-2, 4) == 16)
   }
+
+  test("Fib"){
+    assert(Fib(0) == 0)
+    assert(Fib(4) == 3)
+    assert(Fib(5) == 5)
+    assert(Fib(6) == 8)
+
+  }
 }
