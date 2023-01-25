@@ -36,6 +36,13 @@ class Q1_H2_Test extends FunSuite {
     assert(Fib(4) == 3)
     assert(Fib(5) == 5)
     assert(Fib(6) == 8)
+  }
 
+  test("IsOptimusPrime"){
+    assert(IsOptimusPrime(1))
+    assert(IsOptimusPrime(3))
+    assert(!IsOptimusPrime(4))
+    assert(IsOptimusPrime(11))
+    assert(!IsOptimusPrime(12))
   }
 }

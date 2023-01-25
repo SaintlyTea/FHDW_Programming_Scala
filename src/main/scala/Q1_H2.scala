@@ -1,3 +1,7 @@
+import Q1_H1.Modulo
+
+import scala.annotation.tailrec
+
 object Q1_H2 {
 
   /**
@@ -63,13 +67,22 @@ object Q1_H2 {
   }
 
   /**
-   * This is the IsOptimusPrime/IsPrime function, it will determine whether the number is a prime-number or not
-   *
-   * @param truck :Int
-   * @return if truck is OptimusPrime: true
+   * This is the IsOptimusPrime/IsPrime function, it will figure out whether the given number is a prime-number
+   * @param truck:Int
+   * @return
    */
   def IsOptimusPrime(truck: Int): Boolean = {
-    false
+    @tailrec
+    def OpCuttingRoom(truck: Int, cutter: Int): Boolean = {
+      if (cutter == 1)
+        return true
+      if(Modulo(truck, cutter) == 0)
+        return false
+      OpCuttingRoom(truck, cutter - 1)
+    }
+    if (truck <= 3)
+      return true
+    OpCuttingRoom(truck, truck - 1)
   }
 
   /**
