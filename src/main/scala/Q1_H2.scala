@@ -68,7 +68,8 @@ object Q1_H2 {
 
   /**
    * This is the IsOptimusPrime/IsPrime function, it will figure out whether the given number is a prime-number
-   * @param truck:Int
+   *
+   * @param truck :Int
    * @return
    */
   def IsOptimusPrime(truck: Int): Boolean = {
@@ -76,10 +77,11 @@ object Q1_H2 {
     def OpCuttingRoom(truck: Int, cutter: Int): Boolean = {
       if (cutter == 1)
         return true
-      if(Modulo(truck, cutter) == 0)
+      if (Modulo(truck, cutter) == 0)
         return false
       OpCuttingRoom(truck, cutter - 1)
     }
+
     if (truck <= 3)
       return true
     OpCuttingRoom(truck, truck - 1)
@@ -107,6 +109,15 @@ object Q1_H2 {
    * @return number but read from right to left
    */
   def UnoReverse(num: Int): Int = {
-    0
+    if (num == 0)
+      return 0
+    if (num >= 10)
+      Modulo(num, 10) *
+        // this mess is to get the position for this digit
+        (num - Modulo(num, POWEEEERRROFRECURSION(10, num.toString.length - 1))) / // num minus the numbers after this num
+        (num / POWEEEERRROFRECURSION(10, num.toString.length - 1)) + // this is to get the first number to 1 to get the position
+        UnoReverse(num / 10) // go to next digit
+    else
+      Modulo(num, 10) + UnoReverse(num / 10)
   }
 }
