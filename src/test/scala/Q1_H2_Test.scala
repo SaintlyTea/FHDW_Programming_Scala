@@ -48,15 +48,23 @@ class Q1_H2_Test extends FunSuite {
   }
 
   test("NumberOfOptimusPrimes") {
-    assert(NumberOfOptimusPrimes(3) == 3)
-    assert(NumberOfOptimusPrimes(11) == 6)
+    assert(NumberOfOptimusPrimesUnder(3) == 3)
+    assert(NumberOfOptimusPrimesUnder(11) == 6)
   }
 
   test("UnoReverse") {
+    assert(UnoReverse(100) == 1)
     assert(UnoReverse(17) == 71)
     assert(UnoReverse(27) == 72)
+    assert(UnoReverse(101) == 101)
     assert(UnoReverse(132) == 231)
     assert(UnoReverse(978) == 879)
     assert(UnoReverse(9998) == 8999)
+  }
+
+  test("GetLengthOfNumber"){
+    assert(GetLengthOfNumber(1) == 1)
+    assert(GetLengthOfNumber(10) == 2)
+    assert(GetLengthOfNumber(100) == 3)
   }
 }

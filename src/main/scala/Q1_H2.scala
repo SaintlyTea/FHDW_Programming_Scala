@@ -88,23 +88,24 @@ object Q1_H2 {
   }
 
   /**
-   * This is the NumberOfOptimusPrimes/NumberOfPrimes function, it will count how many prime-numbers there are until truckCount
+   * This is the NumberOfOptimusPrimesUnder/NumberOfPrimes function, it will count how many prime-numbers there are until truckCount
    *
    * @param truckCount :int
    * @return How many OptimusPrimes there are in the truckCount
    */
-  def NumberOfOptimusPrimes(truckCount: Int): Int = {
+  def NumberOfOptimusPrimesUnder(truckCount: Int): Int = {
     if (truckCount == 0)
       return 0
     if (IsOptimusPrime(truckCount))
-      1 + NumberOfOptimusPrimes(truckCount - 1)
+      1 + NumberOfOptimusPrimesUnder(truckCount - 1)
     else
-      NumberOfOptimusPrimes(truckCount - 1)
+      NumberOfOptimusPrimesUnder(truckCount - 1)
   }
 
   /**
    * This is the UnoReverse/Mirror function, it will spin the number 180 degrees
    *
+   * @note König said it can be optimized
    * @param num :Int
    * @return number but read from right to left
    */
@@ -112,9 +113,24 @@ object Q1_H2 {
     if (num == 0)
       return 0
     Modulo(num, 10) *
-      // this mess is to get the position for this digit
-      (num - Modulo(num, POWEEEERRROFRECURSION(10, num.toString.length - 1))) / // num minus the numbers after this num
-      (num / POWEEEERRROFRECURSION(10, num.toString.length - 1)) + // this is to get the first number to 1 to get the position
-      UnoReverse(num / 10) // go to next digit
+      POWEEEERRROFRECURSION(10, GetLengthOfNumber(num) - 1) +
+      UnoReverse(num / 10)
+  }
+
+  /**
+   * Helper Function, used to get the amount of digits
+   *
+   * @note might want to optimize to a loop to save capacity
+   * @param num :Int
+   * @return the amount of digits
+   */
+  def GetLengthOfNumber(num: Int): Int = {
+    if (num == 0)
+      return 0
+    1 + GetLengthOfNumber(num / 10)
+  }
+
+  def PerfectNumber(num: Int): Boolean = {
+    false
   }
 }
