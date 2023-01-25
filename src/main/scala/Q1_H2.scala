@@ -111,13 +111,10 @@ object Q1_H2 {
   def UnoReverse(num: Int): Int = {
     if (num == 0)
       return 0
-    if (num >= 10)
-      Modulo(num, 10) *
-        // this mess is to get the position for this digit
-        (num - Modulo(num, POWEEEERRROFRECURSION(10, num.toString.length - 1))) / // num minus the numbers after this num
-        (num / POWEEEERRROFRECURSION(10, num.toString.length - 1)) + // this is to get the first number to 1 to get the position
-        UnoReverse(num / 10) // go to next digit
-    else
-      Modulo(num, 10) + UnoReverse(num / 10)
+    Modulo(num, 10) *
+      // this mess is to get the position for this digit
+      (num - Modulo(num, POWEEEERRROFRECURSION(10, num.toString.length - 1))) / // num minus the numbers after this num
+      (num / POWEEEERRROFRECURSION(10, num.toString.length - 1)) + // this is to get the first number to 1 to get the position
+      UnoReverse(num / 10) // go to next digit
   }
 }
