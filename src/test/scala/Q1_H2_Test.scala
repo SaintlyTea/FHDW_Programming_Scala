@@ -45,4 +45,9 @@ class Q1_H2_Test extends FunSuite {
     assert(IsOptimusPrime(11))
     assert(!IsOptimusPrime(12))
   }
+
+  test("NumberOfOptimusPrimes") {
+    assert(NumberOfOptimusPrimes(3) == 3)
+    assert(NumberOfOptimusPrimes(11) == 6)
+  }
 }

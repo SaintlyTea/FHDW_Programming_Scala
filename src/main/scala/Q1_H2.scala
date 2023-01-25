@@ -92,7 +92,12 @@ object Q1_H2 {
    * @return How many OptimusPrimes there are in the truckCount
    */
   def NumberOfOptimusPrimes(truckCount: Int): Int = {
-    0
+    if (truckCount == 0)
+      return 0
+    if (IsOptimusPrime(truckCount))
+      1 + NumberOfOptimusPrimes(truckCount - 1)
+    else
+      NumberOfOptimusPrimes(truckCount - 1)
   }
 
   /**
