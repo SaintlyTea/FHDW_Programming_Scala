@@ -98,7 +98,7 @@ object Q1_H1 {
 
 
   /**
-   * If x*i divided by m returns 1 from ReturnRest return i
+   * If x*i divided by m returns 1 from Modulo return i
    * REQUIRES: m>x
    */
   def Inverse(x: Int, m: Int): Int = {
