@@ -133,4 +133,27 @@ object Q1_H2 {
   def PerfectNumber(num: Int): Boolean = {
     false
   }
+
+  /**
+   * Decodes a decimal number into the octal code
+   * @param num:Int
+   * @return
+   */
+  def ToOctal(num:Int):String = {
+    if (num == 0)
+      return ""
+    ToOctal(num/8) + Modulo(num, 8).toString
+  }
+
+  /**
+   * decodes from decimal into the giving cipher, but cannot do >10
+   * @param num:Int
+   * @param cipher:Int
+   * @return
+   */
+  def DecodeDecimal(num:Int, cipher:Int):String = {
+    if(num == 0)
+      return ""
+    DecodeDecimal(num/cipher, cipher) + Modulo(num, cipher).toString
+  }
 }

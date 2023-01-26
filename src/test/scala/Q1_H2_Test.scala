@@ -67,4 +67,15 @@ class Q1_H2_Test extends FunSuite {
     assert(GetLengthOfNumber(10) == 2)
     assert(GetLengthOfNumber(100) == 3)
   }
+
+  test("ToOctal"){
+    assert(ToOctal(1) == "1")
+    assert(ToOctal(10) == "12")
+    assert(ToOctal(256) == "400")
+  }
+
+  test("DecodeDecimal"){
+    assert(DecodeDecimal(20, 16) == "14")
+    assert(DecodeDecimal(20, 2) == "10100")
+  }
 }
