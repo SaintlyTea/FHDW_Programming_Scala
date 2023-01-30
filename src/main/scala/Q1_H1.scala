@@ -10,8 +10,7 @@ object Q1_H1 {
   /**
    * add 1 to number x
    */
-  def Increment(x: Int): Int =
-    x + 1
+  def Increment(x: Int): Int = x + 1
 
   /**
    * if bigger than constant: true
