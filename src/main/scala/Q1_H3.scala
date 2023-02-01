@@ -32,18 +32,22 @@ object Q1_H3 {
    */
   def Fibonacci(n: BigInt): BigInt = {
     @tailrec
-    def Fibo(n: BigInt, x: BigInt, y: BigInt): BigInt = {
+    def Fibo(n: BigInt, x: BigInt = 0, y: BigInt = 1): BigInt = {
       if (n == 1)
         return y
       Fibo(n - 1, y, x + y)
     }
 
-    Fibo(n, 0, 1)
+    Fibo(n)
   }
 
-  def PressF(): Int = {
+  /**
+   * idk why we have this so i will comment this out.
+   * @return
+   */
+  /*def PressF(): Int = {
     0
-  }
+  }*/
 
   // Start of task 26 and 27
 
@@ -94,5 +98,57 @@ object Q1_H3 {
 
   // End of task 26 and 27
 
+  /**
+   * connects 2 string
+   * @param x:String
+   * @param y:String
+   * @return
+   */
+  def MyConCat(x:String, y:String):String = x + y
 
+  /**
+   * returns the first letter of a string
+   * @param x:String
+   * @return
+   */
+  def MyHead(x:String):String = x.head.toString
+
+  /**
+   * returns everything except the first letter
+   * @param x:String
+   * @return
+   */
+  def MyTail(x:String):String = x.tail
+
+  /**
+   * returns length of string
+   * @param x:String
+   * @return
+   */
+  def MyLength(x:String):Int = {
+    @tailrec
+    def getLength(x:String, i:Int = 0):Int = {
+      if(x == "")
+        i
+      else
+        getLength(MyTail(x), i+1)
+    }
+    getLength(x)
+  }
+
+  /**
+   * turns string around
+   * @param x:String
+   * @return
+   */
+  def StringReverse(x:String):String = {
+    def Reverse(stringy:String, result:String = ""):String = {
+      if (stringy != "") {
+        return Reverse(MyTail(stringy), MyHead(stringy) + result)
+      }
+      result
+    }
+
+    Reverse(x)
+  }
 }

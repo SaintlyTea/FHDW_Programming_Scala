@@ -1,7 +1,7 @@
 import org.scalatest.FunSuite
 import Q1_H2._
 
-class Q1_H2_Test extends FunSuite {
+class Q1_H2_Tests extends FunSuite {
   test("SumUpToRECURSION") {
     assert(SumUpToRECURSION(1) == 1)
     assert(SumUpToRECURSION(10) == 55)

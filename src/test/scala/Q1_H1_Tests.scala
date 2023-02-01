@@ -1,6 +1,6 @@
 import org.scalatest.FunSuite
 import Q1_H1._
-class Q1_H1_Test extends FunSuite {
+class Q1_H1_Tests extends FunSuite {
     test( "Increment"){
       assert(Increment(9) == 10)
     }

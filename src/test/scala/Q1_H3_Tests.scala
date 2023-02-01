@@ -2,7 +2,7 @@ import Q1_H3._
 import org.scalatest.FunSuite
 
 //noinspection NameBooleanParameters
-class Q1_H3_Test extends  FunSuite {
+class Q1_H3_Tests extends  FunSuite {
   test("Production"){
     assert(Product(0,6) == 120)
     assert(Product(1,6) == 120)
@@ -53,5 +53,26 @@ class Q1_H3_Test extends  FunSuite {
 
   test("ToCharacter"){
     assert(ToCharacter(97) == 'a')
+  }
+
+  test("MyConCat"){
+    assert(MyConCat("Hello ", "there") == "Hello there")
+  }
+
+  test("MyHead"){
+    assert(MyHead("Hello") == "H")
+  }
+
+  test("MyTail"){
+    assert(MyTail("Hello") == "ello")
+  }
+
+  test("MyLength"){
+    assert(MyLength("Hello there")  == 11)
+  }
+
+  test("StringReverse"){
+    assert(StringReverse("Te Te") == "eT eT")
+    assert(StringReverse("Hello there") == "ereht olleH")
   }
 }
