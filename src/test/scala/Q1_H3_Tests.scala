@@ -60,6 +60,8 @@ class Q1_H3_Tests extends FunSuite {
 
   test("MyConCat") {
     assert(MyConCat("Hello ", "there") == "Hello there")
+    assert(MyConCat("Yeeee", 't') == "Yeeeet")
+    assert(MyConCat('T', 'e') + MyConCat('T', 'e') == "TeTe")
   }
 
   test("MyHead") {

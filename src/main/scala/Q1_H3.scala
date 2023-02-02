@@ -117,6 +117,7 @@ object Q1_H3 {
   def MyConCat(x: String, y: String): String = x + y
 
   def MyConCat(x: String, y: Char): String = x + y
+  def MyConCat(x: Char, y: String): String = x + y
 
   def MyConCat(x:Char, y:Char):String = x + "" + y
 
