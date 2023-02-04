@@ -127,7 +127,7 @@ object Q1_H3 {
    * @param x :String
    * @return
    */
-  def MyHead(x: String): String = x.head.toString
+  def MyHead(x: String): Char = x.head
 
   /**
    * returns everything except the first letter
@@ -135,7 +135,7 @@ object Q1_H3 {
    * @param x :String
    * @return
    */
-  def MyTail(x: String): String = x.tail
+  def MyTail(x: String): String =   x.tail
 
   // end of Task 26 - 28
 
