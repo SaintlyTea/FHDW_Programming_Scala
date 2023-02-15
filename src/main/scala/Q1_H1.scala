@@ -1,8 +1,9 @@
+import Exceptions.ExceptionMessages._
 
 // test haha
 object Q1_H1 {
   val constant = 42
-
+  val divisorIsZeroError = "The divisor cannot be 0"
   def main(args: Array[String]): Unit = {
 
   }
@@ -12,7 +13,7 @@ object Q1_H1 {
    */
   def Increment(x: Int): Int = x + 1
 
-  /**
+    /**
    * if bigger than constant: true
    */
   def BiggerThanConstant(input: Int): Boolean =
@@ -33,6 +34,12 @@ object Q1_H1 {
     y
   }
 
+  def Max(x: BigInt, y: BigInt): BigInt = {
+    if (x > y)
+      return x
+    y
+  }
+
   /**
    * get absolute of x
    */
@@ -42,14 +49,39 @@ object Q1_H1 {
     x
   }
 
+  def Abs(x: BigInt): BigInt = {
+    if (x < 0)
+      return x * -1
+    x
+  }
+
   /**
    * Rest of Division for x divided by y
    */
-  def Modulo(x: Int, y: Int): Int = {
-    if (y != 0)
-      return x - ((x / y) * y)
+  def Modulo(x: Int, y: Int): Int = try {
+    if (y == 0)
+      throw new Exception(DivisorCantBeZero)
+    else
+      x - ((x / y) * y)
+  }
+  catch{
+    case e: Exception =>
+      println(e.getMessage)
+      0
+  }
 
-    0
+  def Modulo(x: BigInt, y: BigInt): BigInt = {
+    try {
+      if (y == 0)
+        throw new Exception(DivisorCantBeZero)
+      else
+        x - ((x / y) * y)
+    }
+    catch {
+      case e: Exception =>
+        println(e.getMessage)
+        0
+    }
   }
 
   /**

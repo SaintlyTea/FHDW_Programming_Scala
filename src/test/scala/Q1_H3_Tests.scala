@@ -56,6 +56,7 @@ class Q1_H3_Tests extends FunSuite {
 
   test("ToCharacter") {
     assert(ToCharacter(97) == 'a')
+    assert(ToCharacter(98) == 'b')
   }
 
   test("MyConCat") {
@@ -65,7 +66,7 @@ class Q1_H3_Tests extends FunSuite {
   }
 
   test("MyHead") {
-    assert(MyHead("Hello") == "H")
+    assert(MyHead("Hello") == 'H')
   }
 
   test("MyTail") {

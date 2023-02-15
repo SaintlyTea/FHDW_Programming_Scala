@@ -75,7 +75,18 @@ class Q1_H2_Tests extends FunSuite {
   }
 
   test("DecodeDecimal"){
-    assert(DecodeDecimal(20, 16) == "14")
-    assert(DecodeDecimal(20, 2) == "10100")
+    assert(DecodeDecimal(20, 16) == 0)
+    assert(DecodeDecimal(20, 2) == 10100)
+  }
+
+  test("ggt"){
+    assert(GreaterCommonDivisor(3,6) == 3)
+    assert(GreaterCommonDivisor(6,24) == 6)
+
+  }
+
+  test("lcm"){
+    assert(LeastCommonMultiplier(1, 5) == 1)
+    assert(LeastCommonMultiplier(7, 60) == 420)
   }
 }

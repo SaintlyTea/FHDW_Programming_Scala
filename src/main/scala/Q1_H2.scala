@@ -1,4 +1,5 @@
-import Q1_H1.Modulo
+import Exceptions.ExceptionMessages._
+import Q1_H1.{Abs, Max, Modulo}
 
 import scala.annotation.tailrec
 
@@ -136,24 +137,127 @@ object Q1_H2 {
 
   /**
    * Decodes a decimal number into the octal code
-   * @param num:Int
+   *
+   * @param num :Int
    * @return
    */
-  def ToOctal(num:Int):String = {
+  def ToOctal(num: Int): String = {
     if (num == 0)
       return ""
-    ToOctal(num/8) + Modulo(num, 8).toString
+    ToOctal(num / 8) + Modulo(num, 8).toString
   }
 
   /**
    * decodes from decimal into the giving cipher, but cannot do >10
-   * @param num:Int
-   * @param cipher:Int
+   *
+   * @param num    :Int
+   * @param cipher :Int
    * @return
    */
-  def DecodeDecimal(num:Int, cipher:Int):String = {
-    if(num == 0)
-      return ""
-    DecodeDecimal(num/cipher, cipher) + Modulo(num, cipher).toString
+  def DecodeDecimal(num: Int, cipher: Int): Int = {
+    if (num == 0)
+      return 0
+    try {
+      if (cipher < 2 || cipher > 9)
+        throw new Exception("Can't decode in 1 or lower and 10 or above")
+      Modulo(num, cipher) + 10 * DecodeDecimal(num / cipher, cipher)
+    }
+    catch {
+      case e: Exception =>
+        println(e.getMessage)
+        0
+    }
+  }
+
+  /**
+   * Calculates the greater common divisor of 2 numbers
+   *
+   * @param a :Int
+   * @param b :Int
+   * @return
+   */
+  def GreaterCommonDivisor(a: Int, b: Int): Int = {
+    @tailrec
+    def GreaterCommonDivisor(a: Int, b: Int): Int = {
+      if (b == 0)
+        GreaterCommonDivisor(b, Modulo(a, b))
+      else
+        a
+    }
+
+    try {
+      if (a == 0 || b == 0)
+        throw new Exception(DivisorCantBeZero + " at gcd")
+      GreaterCommonDivisor(Abs(a), Abs(b))
+    }
+    catch {
+      case e: Exception =>
+        println(e.getMessage)
+        Max(Abs(a), Abs(b))
+    }
+  }
+
+  def GreaterCommonDivisor(a: BigInt, b: BigInt): BigInt = {
+    @tailrec
+    def GreaterCommonDivisor(a: BigInt, b: BigInt): BigInt = {
+      if (b == 0)
+        GreaterCommonDivisor(b, Modulo(a, b))
+      else
+        a
+    }
+
+    try {
+      if (a == 0 || b == 0)
+        throw new Exception(DivisorCantBeZero + " at gcd")
+      GreaterCommonDivisor(Abs(a), Abs(b))
+    }
+    catch {
+      case e: Exception =>
+        println(e.getMessage)
+        Max(Abs(a), Abs(b))
+    }
+  }
+
+  def LeastCommonMultiplier(a: Int, b: Int): Int = {
+    @tailrec
+    def LeastHelper(a: Int, b: Int, greater: Int = Max(a, b)): Int = {
+      if (Modulo(greater, a) == 0 && Modulo(greater, b) == 0)
+        greater
+      else
+        LeastHelper(a, b, greater + 1)
+    }
+
+    try {
+      if (a == 0 || b == 0)
+        throw new Exception(DivisorCantBeZero + " (at lcm)")
+      LeastHelper(Abs(a), Abs(b))
+    }
+    catch {
+      case e: Exception =>
+        println(e.getMessage)
+        Max(Abs(a), Abs(b))
+    }
+  }
+
+  def LeastCommonMultiplier(a: BigInt, b: BigInt): BigInt = {
+    @tailrec
+    def LeastHelper(a: BigInt, b: BigInt, greater: BigInt = Max(a, b)): BigInt = {
+      if (Modulo(greater, a) == 0 && Modulo(greater, b) == 0)
+        greater
+      else
+        LeastHelper(a, b, greater + 1)
+    }
+
+    try {
+      if (a == 0 || b == 0)
+        throw new Exception(DivisorCantBeZero + " (at lcm)")
+      LeastHelper(Abs(a), Abs(b))
+    }
+    catch {
+      case e: Exception =>
+        println(e.getMessage)
+        Max(Abs(a), Abs(b))
+    }
   }
 }
+

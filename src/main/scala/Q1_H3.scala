@@ -43,6 +43,7 @@ object Q1_H3 {
     if (n < 1)
       return 0
     Fibo(n)
+    Fibo(n)
   }
 
   /**
@@ -106,6 +107,7 @@ object Q1_H3 {
    * @return
    */
   def ToCharacter(x: Int): Char = x.toChar
+  def ToCharacter(x: BigInt): Char = x.toChar
 
   /**
    * connects 2 string
@@ -115,8 +117,9 @@ object Q1_H3 {
    * @return
    */
   def MyConCat(x: String, y: String): String = x + y
+  def MyConCat(x: String, y: Int): String = x + y
 
-  def MyConCat(x: String, y: Char): String = x + y
+  def MyConCat(x: String, y: Char): String = x + ToCharacter(y)
   def MyConCat(x: Char, y: String): String = x + y
 
   def MyConCat(x:Char, y:Char):String = x + "" + y
