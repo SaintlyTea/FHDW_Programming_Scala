@@ -5,9 +5,9 @@ import org.scalatest.FunSuite
 
 class Q1_H5_Tests extends FunSuite {
   test("sign"){
-    assert(Sign(2) == "Größer")
-    assert(Sign(-1) == "Kleiner")
-    assert(Sign(0) == "Gleich")
+    assert(Sign(Fraction(1, 2)) == 1)
+    assert(Sign(Fraction(0, 2)) == 0)
+    assert(Sign(Fraction(-1, 2)) == -1)
   }
 
   test("ToRational"){

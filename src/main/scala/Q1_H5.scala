@@ -5,33 +5,18 @@ import Q1_H2.{GreaterCommonDivisor, LeastCommonMultiplier}
 object Q1_H5 {
 
   /**
-   * Returns whether the number is Bigger, Even or Smaller than 0
-   *
-   * @param number :Int
-   * @return
-   */
-  def Sign(number: Int): String = {
-    if (number > 0)
-      "Bigger"
-    else if (number < 0)
-      "Smaller"
-    else
-      "Even"
-  }
-
-  /**
    * Returns whether the Fraction is Bigger, Even or Smaller than 0
    *
    * @param fract :Fraction
    * @return
    */
-  def Sign(fract: Fraction): String = {
+  def Sign(fract: Fraction): Int = {
     if (fract.Enumerator > 0)
-      "Bigger"
+      1
     else if (fract.Enumerator < 0)
-      "Smaller"
+      -1
     else
-      "Even"
+      0
   }
 
   /**
