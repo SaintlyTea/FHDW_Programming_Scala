@@ -135,11 +135,11 @@ object Q1_H4 {
         MyConCat(stringy, ToCharacter(ToUnicode('0') + Modulo(number, 10))))
   }
 
-  def MyToString(number: BigInt, stringy: String = ""): String = {
+  def MyToStringBigInt(number: BigInt, stringy: String = ""): String = {
     if (number == 0)
       ""
     else
-      MyConCat(MyToString(number / 10, stringy),
+      MyConCat(MyToStringBigInt(number / 10, stringy),
         MyConCat(stringy, ToCharacter(ToUnicode('0') + Modulo(number, 10:BigInt))))
   }
 
@@ -148,7 +148,7 @@ object Q1_H4 {
 
   def MyToString(stringy: String): String = stringy
 
-  def MyToString(fraction:Fraction):String = MyConCat(MyConCat(MyToString(fraction.Enumerator), "/"), MyToString(fraction.Denominator))
+  def MyToString(fraction:Fraction):String = MyConCat(MyConCat(MyToStringBigInt(fraction.Enumerator), "/"), MyToStringBigInt(fraction.Denominator))
 
   // End of MyToString
 

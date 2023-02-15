@@ -28,6 +28,13 @@ class FractionTests extends FunSuite {
   }
 
   test("Division"){
+    intercept[Exception] {
+      Division(Fraction(0, 2), Fraction(1, 2))
+    }
+    intercept[Exception] {
+      Division(Fraction(1, 2), Fraction(0, 2))
+    }
+
     assert(Division(Fraction(1, 2), Fraction(1,4)) == Fraction(4, 2))
     assert(Division(Fraction(-1, 2), Fraction(1,4)) == Fraction(-4, 2))
   }

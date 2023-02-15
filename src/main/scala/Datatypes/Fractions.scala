@@ -42,6 +42,8 @@ object Fractions {
     )
   }
   def Division(x:Fraction, y:Fraction):Fraction = {
+    if (x.Enumerator == 0 || y.Enumerator == 0)
+      throw new Exception(DivisorCantBeZero)
     Multiply(x, Fraction(y.Denominator, y.Enumerator))
   }
 
