@@ -72,7 +72,7 @@ object Q1_H4 {
 
   def ContainsHowOften(baseString: String, toCompare: String): Int = {
     @tailrec
-    def countHowOften(baseString: String, toCompare: String, counter: Int = 0, chain: String = toCompare, remember:String = ""): Int = {
+    def countHowOften(baseString: String, toCompare: String, counter: Int = 0, chain: String = toCompare, remember: String = ""): Int = {
       if (baseString == "")
         counter
       else if (MyHead(baseString) == MyHead(chain)) {
@@ -88,14 +88,16 @@ object Q1_H4 {
       else
         countHowOften(MyTail(baseString), toCompare, counter)
     }
-    if(baseString == "" || toCompare == "")
+
+    if (baseString == "" || toCompare == "")
       return 0
     countHowOften(baseString, toCompare)
   }
 
   /**
    * Shift the last letter to the front
-   * @param s:String
+   *
+   * @param s :String
    * @return
    */
   def MyShifty(s: String): String = MyHead(StringReverse(s)) + StringReverse(MyTail(StringReverse(s)))
@@ -103,17 +105,18 @@ object Q1_H4 {
 
   /**
    * checks if s1 is lower in alphabetic order than s2
-   * @param s1:String
-   * @param s2:String
+   *
+   * @param s1 :String
+   * @param s2 :String
    * @return
    */
   @tailrec
   def MyLess(s1: String, s2: String): Boolean = {
     if ((s2 == "" && s1 != "") || (s1 == "" && s2 == ""))
       false
-    else if(s1 == "" && s2 != "")
+    else if (s1 == "" && s2 != "")
       true
-    else if(MyHead(s1) > MyHead(s2))
+    else if (MyHead(s1) > MyHead(s2))
       false
     else if (MyHead(s1) == MyHead(s2))
       MyLess(MyTail(s1), MyTail(s2))
@@ -127,31 +130,46 @@ object Q1_H4 {
    * @note this needs to be done "correctly"
    * @return
    */
-  def MyToString(number: Int, stringy: String = ""): String = {
-    if (number == 0)
-      ""
+  def MyToString(number: Int): String = {
+    def StringNumberHelper(number: Int, stringy: String = ""): String = {
+      if (number == 0)
+        ""
+      else
+        MyConCat(StringNumberHelper(number / 10, stringy),
+          MyConCat(stringy, ToCharacter(ToUnicode('0') + Modulo(number, 10))))
+    }
+
+    if (number < 0)
+      MyConCat("-", StringNumberHelper(Abs(number)))
     else
-      MyConCat(MyToString(number / 10, stringy),
-        MyConCat(stringy, ToCharacter(ToUnicode('0') + Modulo(number, 10))))
+      StringNumberHelper(number)
   }
 
-  def MyToStringBigInt(number: BigInt, stringy: String = ""): String = {
-    if (number == 0)
-      ""
-    else
-      MyConCat(MyToStringBigInt(number / 10, stringy),
-        MyConCat(stringy, ToCharacter(ToUnicode('0') + Modulo(number, 10:BigInt))))
-  }
+  def MyToStringBigInt(num: BigInt): String = {
+    def StringBigIntHelper(number: BigInt, stringy: String = ""): String = {
+      if (number == 0)
+        ""
+      else
+        MyConCat(StringBigIntHelper(number / 10, stringy),
+          MyConCat(stringy, ToCharacter(ToUnicode('0') + Modulo(number, 10: BigInt))))
+    }
 
+    if (num < 0)
+      MyConCat("-", StringBigIntHelper(Abs(num)))
+    else
+      StringBigIntHelper(num)
+  }
 
   def MyToString(booly: Boolean): String = if (booly) "true" else "false"
 
   def MyToString(stringy: String): String = stringy
 
-  def MyToString(fraction:Fraction):String = MyConCat(MyConCat(MyToStringBigInt(fraction.Enumerator), "/"), MyToStringBigInt(fraction.Denominator))
+  def MyToString(fraction: Fraction): String = "(" + MyConCat(
+    MyConCat(
+      MyToStringBigInt(fraction.Enumerator), "/"),
+    MyToStringBigInt(fraction.Denominator)) + ")"
 
   // End of MyToString
 
-  
 
 }

@@ -6,16 +6,22 @@ import org.scalatest.FunSuite
 class Q1_H5_Tests extends FunSuite {
   test("sign"){
     assert(Sign(Fraction(1, 2)) == 1)
+    assert(Sign(Fraction(-1, -2)) == 1)
     assert(Sign(Fraction(0, 2)) == 0)
     assert(Sign(Fraction(-1, 2)) == -1)
+    assert(Sign(Fraction(1, -2)) == -1)
   }
 
   test("ToRational"){
     assert(ToRational(Fraction(3, 333)) == Fraction(1, 111))
     assert(ToRational(Fraction(10, 100)) == Fraction(1, 10))
 
-    assert(ToRational(Fraction(-3, -333)) == Fraction(-1, -111))
-    assert(ToRational(Fraction(-10, -100)) == Fraction(-1, -10))
+    assert(ToRational(Fraction(-3, -333)) == Fraction(1, 111))
+    assert(ToRational(Fraction(-10, -100)) == Fraction(1, 10))
+
+    assert(ToRational(Fraction(-10, 100)) == Fraction(-1, 10))
+    assert(ToRational(Fraction(10, -100)) == Fraction(1, -10))
+    assert(ToRational(Fraction(0, 100)) == Fraction(1, 10))
   }
 
   test("SameValue"){
@@ -39,6 +45,8 @@ class Q1_H5_Tests extends FunSuite {
   test("MyLess"){
     // true
     assert(MyLess(Fraction(1, 10), Fraction(1, 5)))
+    assert(MyLess(Fraction(1, 3), Fraction(1, 2)))
+    assert(MyLess(Fraction(1, 3), Fraction(1, -2)))
     assert(MyLess(Fraction(-1, 2), Fraction(1, 2)))
     assert(MyLess(Fraction(0, 2), Fraction(1, 2)))
 

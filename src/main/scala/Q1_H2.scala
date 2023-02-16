@@ -187,7 +187,7 @@ object Q1_H2 {
 
     try {
       if (a == 0 || b == 0)
-        throw new Exception(DivisorCantBeZero + " at gcd")
+        throw new Exception(DivisorCantBeZeroException + " at gcd")
       GreaterCommonDivisor(Abs(a), Abs(b))
     }
     catch {
@@ -208,7 +208,7 @@ object Q1_H2 {
 
     try {
       if (a == 0 || b == 0)
-        throw new Exception(DivisorCantBeZero + " at gcd")
+        throw new Exception(DivisorCantBeZeroException + " at gcd")
       GreaterCommonDivisor(Abs(a), Abs(b))
     }
     catch {
@@ -229,7 +229,7 @@ object Q1_H2 {
 
     try {
       if (a == 0 || b == 0)
-        throw new Exception(DivisorCantBeZero + " (at lcm)")
+        throw new Exception(DivisorCantBeZeroException + " (at lcm)")
       LeastHelper(Abs(a), Abs(b))
     }
     catch {
@@ -250,7 +250,7 @@ object Q1_H2 {
 
     try {
       if (a == 0 || b == 0)
-        throw new Exception(DivisorCantBeZero + " (at lcm)")
+        throw new Exception(DivisorCantBeZeroException + " (at lcm)")
       LeastHelper(Abs(a), Abs(b))
     }
     catch {

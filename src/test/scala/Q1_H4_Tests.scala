@@ -1,3 +1,4 @@
+import Datatypes.Fractions.Fraction
 import Q1_H4._
 import org.scalatest.FunSuite
 
@@ -58,6 +59,10 @@ class Q1_H4_Tests extends FunSuite {
 
     assert(MyToString(4) == "4")
     assert(MyToString(44) == "44")
+    assert(MyToString(-44) == "-44")
+
+    assert(MyToStringBigInt(4) == "4")
+    assert(MyToStringBigInt(-4) == "-4")
 
     assert(MyToString("Hello there") == "Hello there")
     assert(MyToString("2b||Not(2b)") == "2b||Not(2b)")

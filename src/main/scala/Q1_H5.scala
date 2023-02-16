@@ -11,31 +11,37 @@ object Q1_H5 {
    * @return
    */
   def Sign(fract: Fraction): Int = {
-    if (fract.Enumerator > 0)
+    if (fract.Enumerator > 0 && fract.Denominator > 0 || fract.Enumerator < 0 && fract.Denominator < 0)
       1
-    else if (fract.Enumerator < 0)
+    else if (fract.Enumerator < 0 || fract.Denominator < 0)
       -1
     else
       0
   }
 
   /**
-   * Returns the shortest fraction
+   * Returns the most shortened fraction
    *
    * @param fract :Fraction
    * @return
    */
   def ToRational(fract: Fraction): Fraction = {
-    val divisor:BigInt = GreaterCommonDivisor(Abs(fract.Enumerator), Abs(fract.Denominator))
-    Fraction(fract.Enumerator / divisor, fract.Denominator / divisor)
+    val divisor: BigInt = GreaterCommonDivisor(fract.Enumerator, fract.Denominator)
+
+    if (Sign(fract) == 1)
+      Fraction(Abs(fract.Enumerator / divisor), Abs(fract.Denominator / divisor))
+    else
+      Fraction(fract.Enumerator / divisor, fract.Denominator/divisor)
   }
 
-  def SameValue(fract1: Fraction, fract2: Fraction): Boolean = {
-    if (ToRational(fract1) == ToRational(fract2))
-      true
-    else
-      false
-  }
+  /**
+   * Checks if two rational number are the same
+   *
+   * @param fract1 :Fraction
+   * @param fract2 :Fraction
+   * @return
+   */
+  def SameValue(fract1: Fraction, fract2: Fraction): Boolean = ToRational(fract1) == ToRational(fract2)
 
   /**
    * Checks if the first Fraction is smaller than the second

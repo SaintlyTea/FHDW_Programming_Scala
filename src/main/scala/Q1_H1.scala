@@ -60,7 +60,7 @@ object Q1_H1 {
    */
   def Modulo(x: Int, y: Int): Int = try {
     if (y == 0)
-      throw new Exception(DivisorCantBeZero)
+      throw new Exception(DivisorCantBeZeroException)
     else
       x - ((x / y) * y)
   }
@@ -73,7 +73,7 @@ object Q1_H1 {
   def Modulo(x: BigInt, y: BigInt): BigInt = {
     try {
       if (y == 0)
-        throw new Exception(DivisorCantBeZero)
+        throw new Exception(DivisorCantBeZeroException)
       else
         x - ((x / y) * y)
     }
