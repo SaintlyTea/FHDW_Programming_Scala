@@ -20,8 +20,8 @@ class Q1_H5_Tests extends FunSuite {
     assert(ToRational(Fraction(-10, -100)) == Fraction(1, 10))
 
     assert(ToRational(Fraction(-10, 100)) == Fraction(-1, 10))
-    assert(ToRational(Fraction(10, -100)) == Fraction(1, -10))
-    assert(ToRational(Fraction(0, 100)) == Fraction(1, 10))
+    assert(ToRational(Fraction(10, -100)) == Fraction(-1, 10))
+    assert(ToRational(Fraction(0, 100)) == Fraction(0, 1))
   }
 
   test("SameValue"){
