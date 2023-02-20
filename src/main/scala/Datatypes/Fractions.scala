@@ -14,18 +14,25 @@ object Fractions {
     if (Denominator == 0) {
       throw new Exception(DivisorCantBeZeroException)
     }
-  }
 
-  def CreateFractionNormal(enum: BigInt, denom: BigInt): Fraction = {
-    if (denom == 0) {
-      throw new Exception(DivisorCantBeZeroException)
+    def CreateFractionNormal(): Fraction = {
+      if (this.Denominator == 0) {
+        throw new Exception(DivisorCantBeZeroException)
+      }
+
+      if (this.Denominator < 0)
+        Fraction(this.Enumerator * -1, this.Denominator * -1)
+      else
+        Fraction(this.Enumerator, this.Denominator)
     }
-    if (denom < 0)
-      Fraction(enum * -1, denom * -1)
-    else
-      Fraction(enum, denom)
   }
 
+  /**
+   * Creates a Fraction leaving the entered data as is
+   * @param enum:Fraction
+   * @param denom:Fraction
+   * @return
+   */
   def CreateFractionCringe(enum: BigInt, denom: BigInt): Fraction = {
     if (denom == 0) {
       throw new Exception(DivisorCantBeZeroException)

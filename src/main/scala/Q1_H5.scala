@@ -30,8 +30,9 @@ object Q1_H5 {
 
     if (Sign(fract) == 1)
       Fraction(Abs(fract.Enumerator / divisor), Abs(fract.Denominator / divisor))
-    else
-      CreateFractionNormal(fract.Enumerator / divisor, fract.Denominator/divisor)
+    else {
+      Fraction(fract.Enumerator / divisor, fract.Denominator/divisor).CreateFractionNormal()
+    }
   }
 
   /**
@@ -59,5 +60,9 @@ object Q1_H5 {
       true
     else
       false
+  }
+
+  def round(frfr:Fraction):Int = {
+    1
   }
 }
