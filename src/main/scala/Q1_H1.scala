@@ -41,6 +41,21 @@ object Q1_H1 {
   }
 
   /**
+   * Returns the smallest number
+   */
+  def Min(x: Int, y: Int): Int = {
+    if (x < y)
+      return x
+    y
+  }
+
+  def Min(x: BigInt, y: BigInt): BigInt = {
+    if (x < y)
+      return x
+    y
+  }
+
+  /**
    * get absolute of x
    */
   def Abs(x: Int): Int = {

@@ -29,9 +29,10 @@ object Q1_H5 {
     val divisor: BigInt = GreaterCommonDivisor(fract.Enumerator, fract.Denominator)
 
     if (Sign(fract) == 1)
-      Fraction(Abs(fract.Enumerator / divisor), Abs(fract.Denominator / divisor))
+        Fraction(Abs(fract.Enumerator) / divisor, Abs(fract.Denominator) / divisor)
     else {
-      Fraction(fract.Enumerator / divisor, fract.Denominator/divisor).CreateFractionNormal()
+      Fraction(fract.Enumerator / divisor, fract.Denominator / divisor).CreateFractionNormal()
+
     }
   }
 
@@ -62,7 +63,7 @@ object Q1_H5 {
       false
   }
 
-  def round(frfr:Fraction):Int = {
+  def round(frfr: Fraction): Int = {
     1
   }
 }

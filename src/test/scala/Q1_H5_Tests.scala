@@ -15,6 +15,7 @@ class Q1_H5_Tests extends FunSuite {
   test("ToRational"){
     assert(ToRational(Fraction(3, 333)) == Fraction(1, 111))
     assert(ToRational(Fraction(10, 100)) == Fraction(1, 10))
+    assert(ToRational(Fraction(100, 10)) == Fraction(10, 1))
 
     assert(ToRational(Fraction(-3, -333)) == Fraction(1, 111))
     assert(ToRational(Fraction(-10, -100)) == Fraction(1, 10))

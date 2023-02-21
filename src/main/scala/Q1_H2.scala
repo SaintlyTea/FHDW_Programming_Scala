@@ -1,5 +1,5 @@
 import Exceptions.ExceptionMessages._
-import Q1_H1.{Abs, Max, Modulo}
+import Q1_H1._
 
 import scala.annotation.tailrec
 
@@ -176,26 +176,6 @@ object Q1_H2 {
    * @param b :Int
    * @return
    */
-  def GreaterCommonDivisor(a: Int, b: Int): Int = {
-    @tailrec
-    def GreaterCommonDivisor(a: Int, b: Int): Int = {
-      if (b == 0)
-        GreaterCommonDivisor(b, Modulo(a, b))
-      else
-        a
-    }
-
-    try {
-      if (a == 0 || b == 0)
-        throw new Exception(DivisorCantBeZeroException + " at gcd")
-      GreaterCommonDivisor(Abs(a), Abs(b))
-    }
-    catch {
-      case e: Exception =>
-        println(e.getMessage)
-        Max(Abs(a), Abs(b))
-    }
-  }
 
   def GreaterCommonDivisor(a: BigInt, b: BigInt): BigInt = {
     @tailrec
@@ -209,28 +189,7 @@ object Q1_H2 {
     try {
       if (a == 0 || b == 0)
         throw new Exception(DivisorCantBeZeroException + " at gcd")
-      GreaterCommonDivisor(Abs(a), Abs(b))
-    }
-    catch {
-      case e: Exception =>
-        println(e.getMessage)
-        Max(Abs(a), Abs(b))
-    }
-  }
-
-  def LeastCommonMultiplier(a: Int, b: Int): Int = {
-    @tailrec
-    def LeastHelper(a: Int, b: Int, greater: Int = Max(a, b)): Int = {
-      if (Modulo(greater, a) == 0 && Modulo(greater, b) == 0)
-        greater
-      else
-        LeastHelper(a, b, greater + 1)
-    }
-
-    try {
-      if (a == 0 || b == 0)
-        throw new Exception(DivisorCantBeZeroException + " (at lcm)")
-      LeastHelper(Abs(a), Abs(b))
+      GreaterCommonDivisor(Min(Abs(a), Abs(b)), Max(Abs(a), Abs(b)))
     }
     catch {
       case e: Exception =>

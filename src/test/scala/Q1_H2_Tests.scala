@@ -82,6 +82,9 @@ class Q1_H2_Tests extends FunSuite {
   test("ggt"){
     assert(GreaterCommonDivisor(3,6) == 3)
     assert(GreaterCommonDivisor(6,24) == 6)
+    assert(GreaterCommonDivisor(10,100) == 10)
+    assert(GreaterCommonDivisor(100,10) == 10)
+    assert(GreaterCommonDivisor(-3,-333) == 3)
 
   }
 

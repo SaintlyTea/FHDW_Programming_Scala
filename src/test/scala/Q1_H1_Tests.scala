@@ -17,6 +17,13 @@ class Q1_H1_Tests extends FunSuite {
     assert(Max(1, 1) == 1)
   }
 
+  test("Min"){
+    assert(Min(2, 5) == 2)
+    assert(Min(6, 5) == 5)
+    assert(Min(1, 1) == 1)
+    assert(Min(-3, -333) == -333)
+  }
+
   test("Abs"){
     assert(Abs(-10) == 10)
     assert(Abs(10) == 10)
