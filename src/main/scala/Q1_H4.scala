@@ -1,6 +1,7 @@
 import Datatypes.Fractions.Fraction
 import Q1_H1._
 import Q1_H3._
+import Q1_H6._
 
 import scala.annotation.tailrec
 
@@ -169,6 +170,19 @@ object Q1_H4 {
       MyToStringBigInt(fraction.Enumerator), "/"),
     MyToStringBigInt(fraction.Denominator)) + ")"
 
+  def MyToString(unit: AbstractUnit): String = {
+    unit match {
+      case b: BaseUnit =>  "Unit: " + b.Name
+      case d: DerivedUnit =>
+        d.calcMethod match {
+          case LinearConversion(m, b) => "Unit: " + d.Name + "\nDerived from: " + d.baseUnit.Name +
+            "\nCalculation-Method: LinearConversion: " + m + "*x+" + b
+          case ProportionalConversion(x) => "Unit: " + d.Name + "\nDerived from: " + d.baseUnit.Name +
+            "\nCalculation-Method: ProportionalConversion: " + x + "*x"
+          case _ => "Unknown Conversion"
+        }
+    }
+  }
   // End of MyToString
 
 
