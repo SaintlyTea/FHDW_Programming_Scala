@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 
 class Q1_H6_Tests extends FunSuite {
 
-  test("MyToString"){
+  test("MyToString") {
     assert(MyToString(BaseUnit("Meter")) == "Unit: Meter")
 
     assert(MyToString(DerivedUnit("Kilometer", BaseUnit("Meter"), ProportionalConversion(1000))) ==
