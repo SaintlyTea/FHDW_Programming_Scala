@@ -18,7 +18,7 @@ object RoundThammAlberts {
     if (x.Denominator == 0)
       throw new Exception(DivisorCantBeZeroException)
 
-    if (x.Enumerator >= (x.Denominator / 2))
+    if (Abs(x.Enumerator) >= Abs(x.Denominator / 2))
       result = (Abs(x.Enumerator) + Abs(x.Denominator)) / Abs(x.Denominator)
     else
       result = x.Enumerator / x.Denominator
