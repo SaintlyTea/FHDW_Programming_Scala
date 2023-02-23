@@ -10,6 +10,7 @@ class Round_Tests extends FunSuite {
     assert(round(Fraction(1, 2)) == 1)
     assert(round(Fraction(3, 4)) == 1)
     assert(round(Fraction(7, 4)) == 2)
+    assert(round(Fraction(3, 5)) == 2)
 
       // Negative
     assert(round(Fraction(-1,4)) == 0)

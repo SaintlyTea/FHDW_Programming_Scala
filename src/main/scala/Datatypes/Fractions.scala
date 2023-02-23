@@ -41,6 +41,10 @@ object Fractions {
       Fraction(enum, denom)
   }
 
+  def FractionInverse(Fract:Fraction):Fraction = Fraction(Fract.Denominator, Fract.Enumerator).CreateFractionNormal()
+
+  def ToFraction(number:Int):Fraction = Fraction(number, 1).CreateFractionNormal()
+
   /**
    * adds together the Fraction x und y
    */

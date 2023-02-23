@@ -172,11 +172,11 @@ object Q1_H4 {
 
   def MyToString(unit: AbstractUnit): String = {
     unit match {
-      case b: BaseUnit =>  "Unit: " + b.Name
+      case b: BaseUnit => "Unit: " + b.Name
       case d: DerivedUnit => val result = "Unit: " + d.Name + "\nDerived from: " + d.baseUnit.Name + "\nCalculation-Method: "
         d.calcMethod match {
           case LinearConversion(m, b) => result + "LinearConversion: " + m + "*x+" + b
-          case ProportionalConversion(x) =>  result + "ProportionalConversion: " + x + "*x"
+          case ProportionalConversion(x) => result + "ProportionalConversion: " + x + "*x"
           case _ => "Unknown Conversion"
         }
     }
